@@ -18,7 +18,7 @@ class Searchbar extends Component {
     e.preventDefault();
 
     const { onSubmit } = this.props;
-    const {query} = this.state;
+    const { query } = this.state;
     onSubmit(query);
     //   reset();
   };
@@ -47,6 +47,6 @@ class Searchbar extends Component {
       </div>
     );
   }
-};
+}
 
 export default Searchbar;
