@@ -1,10 +1,11 @@
-const ImageGalleryItem = ({ images }) => {
+const ImageGalleryItem = ({ largeImageURL, tags, webUrl }) => {
   return (
-    <>
-      <li>
-        <img src="" alt="" />
-      </li>
-    </>
+    <li>
+      <img
+        src={webUrl}
+        alt={tags}
+      />
+    </li>
   );
 };
 
