@@ -1,6 +1,7 @@
 import { Component } from 'react';
 
 import Searchbar from './Searchbar/Searchbar';
+import ImageGallery from './ImageGallery/ImageGallery';
 
 import { getImages, PER_PAGE, responseImages } from '../api/API';
 
@@ -61,6 +62,7 @@ class App extends Component {
     return (
       <>
         <Searchbar onSubmit={searchImages} />
+        <ImageGallery images={images} />
       </>
     );
   }
