@@ -4,6 +4,7 @@ import Searchbar from './Searchbar/Searchbar';
 import ImageGallery from './ImageGallery/ImageGallery';
 
 import { getImages, PER_PAGE, responseImages } from '../api/API';
+import Button from './Button/Button';
 
 class App extends Component {
   state = {
@@ -55,17 +56,25 @@ class App extends Component {
     }
   };
 
+  handleLoadMore = () => {
+    this.setState(prevState => ({
+      page: prevState.page + 1,
+    }))
+  }
+
   render() {
-    const { searchImages } = this;
-    const { images } = this.state;
+    const { searchImages, handleLoadMore } = this;
+    const { images, page, totalPages } = this.state;
+    const isMoreImages = images.length > 0 &&  page !== totalPages;
 
     return (
       <>
         <Searchbar onSubmit={searchImages} />
         <ImageGallery images={images} />
+        {isMoreImages && <Button text="Load more" onClick={handleLoadMore} />}
       </>
     );
   }
-};
+}
 
 export default App;
