@@ -28,10 +28,10 @@ class Searchbar extends Component {
     const { query } = this.state;
 
     return (
-      <div className={s.Searchbar}>
-        <form onSubmit={handleSubmit} className={s.SearchForm}>
+      <div className={s.searchbar}>
+        <form onSubmit={handleSubmit} className={s.form}>
           <input
-            className={s.SearchFormInput}
+            className={s.input}
             onChange={handleChange}
             type="text"
             name="query"
@@ -40,7 +40,7 @@ class Searchbar extends Component {
             autoComplete="off"
             autoFocus
           />
-          <button className={s.SearchFormButton} type="submit">
+          <button className={s.button} type="submit">
             <img src={icon} alt="icon" />
           </button>
         </form>
