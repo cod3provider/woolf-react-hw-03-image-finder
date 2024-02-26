@@ -7,7 +7,7 @@ const ImageGallery = ({ images }) => {
     <ul className={s.list}>
       {images.map(({ id, largeImageURL, tags, webformatURL }, idx) => (
         <ImageGalleryItem
-          key={`${idx}+${id}`} // this resolving problems of backend when two children encountered  with the same key
+          key={`${idx}+${id}`} // this resolving problems of backend when two children encountered with the same key
           largeUrl={largeImageURL}
           tags={tags}
           webUrl={webformatURL}
