@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/woolf-react-hw-03-image-finder/static/css/main.74b1f073.css",
-    "main.js": "/woolf-react-hw-03-image-finder/static/js/main.1600941c.js",
+    "main.css": "/woolf-react-hw-03-image-finder/static/css/main.9b1983cd.css",
+    "main.js": "/woolf-react-hw-03-image-finder/static/js/main.01a42f5d.js",
     "index.html": "/woolf-react-hw-03-image-finder/index.html",
     "static/media/magnifying-glass.svg": "/woolf-react-hw-03-image-finder/static/media/magnifying-glass.28e983dbe5d5c99e5992f622ad36f994.svg",
-    "main.74b1f073.css.map": "/woolf-react-hw-03-image-finder/static/css/main.74b1f073.css.map",
-    "main.1600941c.js.map": "/woolf-react-hw-03-image-finder/static/js/main.1600941c.js.map"
+    "main.9b1983cd.css.map": "/woolf-react-hw-03-image-finder/static/css/main.9b1983cd.css.map",
+    "main.01a42f5d.js.map": "/woolf-react-hw-03-image-finder/static/js/main.01a42f5d.js.map"
   },
   "entrypoints": [
-    "static/css/main.74b1f073.css",
-    "static/js/main.1600941c.js"
+    "static/css/main.9b1983cd.css",
+    "static/js/main.01a42f5d.js"
   ]
 }
