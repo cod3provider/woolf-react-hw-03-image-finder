@@ -7,6 +7,7 @@ import { getImages, PER_PAGE, responseImages } from '../api/API';
 import Button from './Button/Button';
 import Modal from './Modal/Modal';
 import Container from './Container/Container';
+import Loader from './Loader/Loader';
 
 class App extends Component {
   state = {
@@ -84,7 +85,7 @@ class App extends Component {
 
   render() {
     const { searchImages, handleLoadMore, handleModalClick, handleToggleModal } = this;
-    const { images, page, totalPages, isShowModal, largeImageURL, tags } = this.state;
+    const { images, page, totalPages, isShowModal, largeImageURL, tags, isLoading } = this.state;
     const isMoreImages = images.length > 0 && page !== totalPages;
 
     return (
@@ -95,6 +96,7 @@ class App extends Component {
             images={images}
             onOpenModal={handleModalClick}
           />
+          {isLoading && <Loader />}
           {isMoreImages &&
             <Button
               text="Load more"

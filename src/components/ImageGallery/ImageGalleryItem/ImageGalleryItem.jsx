@@ -1,5 +1,4 @@
 import s from './ImageGalleryItem.module.css';
-import { useState } from 'react';
 
 const ImageGalleryItem = ({ largeUrl, tags, webUrl, openModalClick }) => {
   return (
