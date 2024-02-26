@@ -5,6 +5,8 @@ import ImageGallery from './ImageGallery/ImageGallery';
 
 import { getImages, PER_PAGE, responseImages } from '../api/API';
 import Button from './Button/Button';
+import Modal from './Modal/Modal';
+import Container from './Container/Container';
 
 class App extends Component {
   state = {
@@ -13,6 +15,8 @@ class App extends Component {
     page: 1,
     isLoading: false,
     error: null,
+    largeImageURL: '',
+    tags: '',
   };
 
   componentDidUpdate(prevProps, prevState) {
@@ -27,6 +31,7 @@ class App extends Component {
       query,
       images: [],
       page: 1,
+      isShowModal: false,
     });
   };
 
@@ -59,19 +64,52 @@ class App extends Component {
   handleLoadMore = () => {
     this.setState(prevState => ({
       page: prevState.page + 1,
-    }))
-  }
+    }));
+  };
+
+  handleToggleModal = () => {
+    this.setState(({ isShowModal }) => ({
+        isShowModal: !isShowModal,
+      }),
+    );
+  };
+
+  handleModalClick = (largeImageURL, tags) => {
+    this.setState({
+      largeImageURL,
+      tags,
+    });
+    this.handleToggleModal();
+  };
 
   render() {
-    const { searchImages, handleLoadMore } = this;
-    const { images, page, totalPages } = this.state;
-    const isMoreImages = images.length > 0 &&  page !== totalPages;
+    const { searchImages, handleLoadMore, handleModalClick, handleToggleModal } = this;
+    const { images, page, totalPages, isShowModal, largeImageURL, tags } = this.state;
+    const isMoreImages = images.length > 0 && page !== totalPages;
 
     return (
       <>
         <Searchbar onSubmit={searchImages} />
-        <ImageGallery images={images} />
-        {isMoreImages && <Button text="Load more" onClick={handleLoadMore} />}
+        <Container>
+          <ImageGallery
+            images={images}
+            onOpenModal={handleModalClick}
+          />
+          {isMoreImages &&
+            <Button
+              text="Load more"
+              onClick={handleLoadMore}
+            />
+          }
+          {
+            isShowModal &&
+            <Modal
+              handleModalClick={handleToggleModal}
+              image={largeImageURL}
+              alt={tags}
+            />
+          }
+        </Container>
       </>
     );
   }
