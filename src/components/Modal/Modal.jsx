@@ -4,8 +4,19 @@ import { createPortal } from 'react-dom';
 import s from './Modal.module.css';
 
 class Modal extends Component {
+  componentDidMount() {
+    document.addEventListener('keydown', this.handleCloseModal);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.handleCloseModal);
+  }
 
   handleCloseModal = e => {
+    const { handleModalClick } = this.props;
+    if (e.target === e.currentTarget || e.code === 'Escape') {
+      handleModalClick();
+    }
   };
 
   render() {
