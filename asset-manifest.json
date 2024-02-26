@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/woolf-react-hw-03-image-finder/static/css/main.74b1f073.css",
+    "main.js": "/woolf-react-hw-03-image-finder/static/js/main.1600941c.js",
+    "index.html": "/woolf-react-hw-03-image-finder/index.html",
+    "static/media/magnifying-glass.svg": "/woolf-react-hw-03-image-finder/static/media/magnifying-glass.28e983dbe5d5c99e5992f622ad36f994.svg",
+    "main.74b1f073.css.map": "/woolf-react-hw-03-image-finder/static/css/main.74b1f073.css.map",
+    "main.1600941c.js.map": "/woolf-react-hw-03-image-finder/static/js/main.1600941c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.74b1f073.css",
+    "static/js/main.1600941c.js"
+  ]
+}
