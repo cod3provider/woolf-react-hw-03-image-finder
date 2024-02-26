@@ -1,4 +1,4 @@
-import { MagnifyingGlass } from 'react-loader-spinner'
+import { MagnifyingGlass } from 'react-loader-spinner';
 
 import s from './Loader.module.css';
 
@@ -16,7 +16,7 @@ const Loader = () => {
         color="#e15b64"
       />
     </div>
-  )
-}
+  );
+};
 
 export default Loader;
