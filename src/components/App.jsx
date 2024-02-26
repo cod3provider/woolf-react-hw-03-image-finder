@@ -1,13 +1,15 @@
 import { Component } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import Searchbar from './Searchbar/Searchbar';
 import ImageGallery from './ImageGallery/ImageGallery';
-
-import { getImages, PER_PAGE, responseImages } from '../api/API';
 import Button from './Button/Button';
 import Modal from './Modal/Modal';
 import Container from './Container/Container';
 import Loader from './Loader/Loader';
+
+import { getImages, PER_PAGE, responseImages } from '../api/API';
 
 class App extends Component {
   state = {
@@ -45,7 +47,7 @@ class App extends Component {
       const pictures = responseImages(hits);
 
       if (pictures.length === 0) {
-        alert('Images not found');
+        toast.warn('Images not found');
       }
       if (page === 1) {
         this.setState({ totalPages: Math.ceil(totalHits / PER_PAGE) });
@@ -56,6 +58,7 @@ class App extends Component {
     }
     catch (err) {
       this.setState({ error: err.message });
+      toast.error('Something went wrong.');
     }
     finally {
       this.setState({ isLoading: false });
@@ -92,6 +95,18 @@ class App extends Component {
       <>
         <Searchbar onSubmit={searchImages} />
         <Container>
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="colored"
+          />
           <ImageGallery
             images={images}
             onOpenModal={handleModalClick}
