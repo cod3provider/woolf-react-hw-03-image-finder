@@ -48,6 +48,7 @@ class App extends Component {
 
       if (pictures.length === 0) {
         toast.warn('Images not found');
+        return;
       }
       if (page === 1) {
         this.setState({ totalPages: Math.ceil(totalHits / PER_PAGE) });
